@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>interview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" href="libs/jquery.mobile-1.2.0.min.css" />
+<link rel="stylesheet" href="libs/jqm-icon-pack-2.0-original.css" />
+
+<script type="text/javascript" charset="utf-8" src="libs/cordova-2.2.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf-8"
+	src="libs/jquery.mobile-1.2.0.min.js"></script>
+<!-- 
+<script type="text/javascript" charset="utf-8" src="player.js"></script>
+<script type="text/javascript" charset="utf-8" src="lister.js"></script>
+<script type="text/javascript" charset="utf-8" src="synchronizer.js"></script>
+<script type="text/javascript" charset="utf-8" src="utils.js"></script>
+<script type="text/javascript" charset="utf-8" src="app.js"></script>
+ -->
+<script type="text/javascript" charset="utf-8" src="interview.min.js"></script>
+
+</head>
+<body>
+
+	<div data-role="page" id="list" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#player" data-role="button"  data-icon="music">Player</a>		
+			<h6>Interview List</h6>	
+			<button  id="syncButton" ontouchstart="synchronizer.sync()"
+				data-icon="refresh">Sync</button>
+		</div>
+		<!-- /header -->
+		<div data-role="content" data-theme="b">
+			<ul data-role="listview">
+			</ul>
+		</div>
+		<!-- /content -->
+		<div data-role="footer" data-position="fixed" data-theme="b"> 
+		</div> 
+		<div data-role="popup" id="interviewInfo">
+			<div data-role="header"  data-theme="b">
+				<p style="text-align:center">fullName</p>
+			</div>
+			<div data-role="content"  data-theme="b">
+				<p>desc</p>
+				<a href="#" data-role="button" data-rel="back">OK</a>
+			</div>
+		</div>
+		<div data-role="popup" id="noListFile">
+			<div data-role="header" data-theme="b" >
+				<h6>Welcome</h6>
+			</div>
+			<div data-role="content" data-theme="b">
+				<p>Click the button<a data-role="button" data-icon="refresh" data-inline="true">Sync</a>on the top to download interviews!</p>
+				<a href="#" data-role="button" data-rel="back">OK</a>
+			</div>
+		</div>
+	</div>
+	<!-- /page -->
+	
+	<div data-role="page" id="player" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#list" data-icon="grid">List</a>
+			<h6>Title</h6>
+			<a href="#" id="playPauseButton" data-icon="play" ontouchstart="player.playtMp3()">Play</a>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content" data-theme="b">
+			<h6></h6>
+			<div id="interviewLineDiv"></div>
+		</div>
+		<!-- /content -->
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><button data-role="button" data-icon="arrow-u" ontouchstart="player.preQa()">Q&A</button></li>
+					<li><button data-role="button" data-icon="arrow-l" ontouchstart="player.preTime()">5s</button></li>
+					<li><button data-role="button" data-icon="arrow-r" ontouchstart="player.nextTime()">5s</button></li>
+					<li><button data-role="button" data-icon="arrow-d" ontouchstart="player.nextQa()">Q&A</button></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->
+	</div>
+	<!-- /page -->
+
+</body>
+</html>
